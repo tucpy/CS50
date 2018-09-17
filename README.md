@@ -78,6 +78,38 @@ do {} while (boolean-expr); // do something at once, then process to check the B
 for (int i = 0; i<50; i++) {}
 for (start; expr; increment) {}
 
+++ Debugging: help50 make file, eprintf(), debug50 ./file
+
+++ Function: function_name(input 1, input2, inputn, output)
+Why function? Organization, simplification, reusability.
+Function is declared at the top of the program, even before main(). 
+return-type name (argument-list);
+return-type: what kind of variable the function will output 
+name : name of your function
+argument-list: input with comma, type and name of each input.
+Ex: int add_two_ints(int a, int b);
+      float multiply_two_floats (float a, float b);
+      float multiply_two_floats (double a, double b);
+
+float mult_two_floats (float a, float b);
+{
+	float product = x* y;
+	return product;
+}
+
+float mult_two_floats (float a, float b);
+{
+	return  x* y;
+}
+
+int add_two_ints(int a, int b);
+{ 
+	Int sum; //declare variable
+	Sum = a + b; //calculate input
+return sum; //give result back
+}
+
+
 
 
       
