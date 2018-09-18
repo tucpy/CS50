@@ -109,12 +109,62 @@ int add_two_ints(int a, int b);
 return sum; //give result back
 }
 
+        <LECTURE 2>: Algorithms
+        ++ Strings: write initials.c to extract initials from a string (array of characters), assuming that the initials is capital letter. Max 3 initials, the 4th will be NUL character (\0). Use the for loop to iterate through the string, and store the capital letters in "initials" array.
+        We need a length variable to keep track of characters we have seen already, so we can store each character in the right index of initials and terminate it correctly.
+
+        ++ Searching: find a number in a random ordered number array.
+
+        //Linear search: open randomly each door, it would take n step to find it (n was the numbers of number in our array). Pseudocode look like this:
+        for each element in array
+              if element you're looking for
+              return true
+        return false
+
+        //Binary search: look at the middle and start searching in haft left or haft right. We are dividing the problem in half each time, so we will have fewer steps before we find our number, or complete the algorithm.
+
+        look at middle of sorted array
+        if element you're looking for
+            return true
+        else if element is to left
+            search left half of array
+        else if element is to right
+            search right half of array
+        else
+            return false
+
+
+        ++ Sorting:
+        //insertion sort algorithm: at each step, we look at the a pair of numbers, one at at time, and swap them if they are in the wrong order.
+
+        for i from 1 to n-1
+              call 0'th through i-1'th elements the "sorted side"
+              remove i'th element
+              insert it into sorted side in order
+
+        //bubble sort algorithm:
+
+        repeat until no swaps
+            for i from 0 to n-2
+                if i'th and i+1'th elements out of order
+                    swap them
+
+        //selection sort algorithm:
+
+        for i from 0 to n-1
+          find smallest element between i'th and n-1'th
+          swap smallest with i'th element
+
+        ++ Running Time:
+        ++ Merge Sort:
 
 
 
 
+@@@ Week 2: <LECTURE 3>
 
-@@@ Week 2:
+
+
 
 @@@ Week 3:
 
