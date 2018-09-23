@@ -1,7 +1,7 @@
 # CS50
 Notes from CS50 course: introduction to computer science
 
-My goal is to finish this course in 25 days.Problem sets and final project is as follow.
+My goal is to finish this course in 25 days (Goal change, problem sets are too difficult so it took me more time than expected -> awesome revised plan, 40 days may be??). Problem sets and final project is as follow.
 
 Syllabus:(https://docs.cs50.net/2018/x/syllabus.html)
 
@@ -12,23 +12,18 @@ Syllabus:(https://docs.cs50.net/2018/x/syllabus.html)
             ++ Other concepts: Boolean expressions. Conditions. Variables. Functions. Arrays. Threads. Events.
 
 @@@ Week 1: <LECTURE 1>
-            ++ C: int main(void): main is the standard name in C to indicate that it is the default function in a program               that should be run. include is a keyword that indicates we want to include some other file in our program.                   (standard input/output library).
+            ++ C: int main(void): main is the standard name in C to indicate that it is the default function in a program that should be run. include is a keyword that indicates we want to include some other file in our program. (standard input/output library).
             ++ for loops
-            ++ functions included in the cs50.h library. (get_char, get_double, get_float, get_int, get_long_long,                       get_string)
+            ++ functions included in the cs50.h library. (get_char, get_double, get_float, get_int, get_long_long, get_string)
             ++ ints.c (Integer arithmetic)
             ++ // comments
             ++ floats.c (float x = get_float("x: ");)
             ++ conditions.c ( if, else if, else)
             ++ noswitch.c (if, else if, else, ==, ||, &&)
             ++ use single quotes around characters, to distinguish them from strings, which we use double quotes to indicate
-            ++ a switch is another construct in C where the value of a variable is compared to various cases, and the                   indented code beneath a matching case will be executed.
-            ++  overflow.c : integer overflow, a binary number with 8 bits 1 1 1 1 1 1 1 0. we don’t have an extra bit to               the left to actually store that larger value. Number excess memory.
-            <LECTURE 2>
-            ++
-            ++
-            ++
-            ++
-            ++
+            ++ a switch is another construct in C where the value of a variable is compared to various cases, and the indented code beneath a matching case will be executed.
+            ++  overflow.c : integer overflow, a binary number with 8 bits 1 1 1 1 1 1 1 0. we don’t have an extra bit to the left to actually store that larger value. Number excess memory.
+
 ++++++++++++++++++++++++
 ++++ Note from Shorts:
 ++++++++++++++++++++++++
@@ -109,6 +104,26 @@ int add_two_ints(int a, int b);
 return sum; //give result back
 }
 
+++ Variables and Scope:
+Local variable (created inside a function and can only be accessed by that function).
+Global variable (can be accessed by any function in the program). Declare them outside of any function, but be careful as the global variable is manipulated by a function and change it value, before it gets into the second function. Function will use a copy of local variable to perform the calculation.
+
+++ Array:
+
+
+++ Command Line Arguments: to collect cmmand line argumetns from the users
+int main (int argc, string argv[]) -> 2 arguments
+ interger called argc and an array of string inside [].
+Argc (argument count): will store the number of command-line arguments the user typed when the program was excecuted. (It detect the space and tab between argument.
+Ie: ./greedy.c -> argc =1
+./greedy.c 1029 cs50 -> argc = 3
+Argv (argument vector):
+This array of strings stores one string per element. First element can be accessed through argv[0], the last one is argv[argc -1 ]. (because we index from 0). Argv always stores string (even the input is interger) so you need to use atoi from <stdlib.h> library to convert them.
+If you tried to acess argv[3], don’t know what is really there.
+
+
+
+
         <LECTURE 2>: Algorithms
         ++ Strings: write initials.c to extract initials from a string (array of characters), assuming that the initials is capital letter. Max 3 initials, the 4th will be NUL character (\0). Use the for loop to iterate through the string, and store the capital letters in "initials" array.
         We need a length variable to keep track of characters we have seen already, so we can store each character in the right index of initials and terminate it correctly.
@@ -156,8 +171,8 @@ return sum; //give result back
           swap smallest with i'th element
 
         ++ Running Time:
-        ++ Merge Sort:
 
+        ++ Merge Sort:
 
 
 
