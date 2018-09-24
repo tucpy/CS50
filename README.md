@@ -124,7 +124,7 @@ If you tried to acess argv[3], don’t know what is really there.
 
 
 
-        <LECTURE 2>: Algorithms
+        <LECTURE 3>: Algorithms
         ++ Strings: write initials.c to extract initials from a string (array of characters), assuming that the initials is capital letter. Max 3 initials, the 4th will be NUL character (\0). Use the for loop to iterate through the string, and store the capital letters in "initials" array.
         We need a length variable to keep track of characters we have seen already, so we can store each character in the right index of initials and terminate it correctly.
 
@@ -176,9 +176,112 @@ If you tried to acess argv[3], don’t know what is really there.
 
 
 
-@@@ Week 2: <LECTURE 3>
 
 
+
+
+@@@ Week 2: <LECTURE 3>:
+
+
+
+++++++++++++++++++++++++
+++++ Note from Shorts:
+++++++++++++++++++++++++
+
+++ Computational Complexity: need to understand algorithms and how they process data. With an efficient algorithm, we can minimize the amount of resources we have to deal with it. (write clean code, as short as possible. Since dataset is getting bigger and bigger -> require more RAM, CPU to deal with it).
+Complexity of an algorithm: worst-case scenario (O) and best-case scenario (Ω). As we add more data point to the array, how much time it take to actually finish the algorithm?
+
+O(1): constant time
+O(log n): logarithmic time
+O(n): linear time
+O(n log n): linearithmic time
+O(n^2): quadratic time
+O(n^c): polynomial time
+O(c^n): exponential time
+O(n!): factorial time
+O(∞): infinite time
+
+
+++ Selection sort: sort left to right
+Algorithm: find the smallest unsort element and add it to the end of the sorted list.
+Pseudocode: 
+-	Repeat until no unsorted elements remain:
+* Search for the unsorted part of the data to find the smallest value
+* Swap the smallest found value with the first element of the unsorted part
+Worst-case scenario (O(n^2)): we have to iterate over each of the n elements of the array (to find the smallest unsorted element) and we must repeat this process n times, since only one element get sorted on each pass. 
+
+Best-case scenario (Ω(n^2)): same as worst-case as we can only sure the array is sorted if we go through this process for all the elements.
+
+++ Bubble sort: sort right to left
+Algorithm: move higher valued elements generally towards the right and lower value elements generally toward the left.
+Pseudocode: 
+-	Set swap counter to a non-zero value
+-	Repeat until the swap counter is 0:
+* Reset swap counter to 0
+* Look at each adjacent pair
+	//If two adjacent elements are not in order, swap them and add one to the swap counter
+
+Worst-case scenario (O(n^2)): the array is in reverse order; we have to “bubble” each of the n elements all the way across the array, and since we can only fully bubble one element into position per pass, we must do this n times.
+Best-case scenario (Ω(n)): the array is already perfectly sorted, and we make no swaps on the first pass.
+
+++ Insertion sort: 
+Algorithm: build your sorted array in place, shifting elements out of the way if necessary to make roomsas you go.
+Pseudocode:
+-	Call the first element of the array “sorted”
+-	Repeat until all element are sorted:
+// Look at the next unsorted element. Insert into the “sorted” portion by shifting the requisite number of elements.  
+
+Worst-case scenario (O(n^2)): the array is in reverse order; we have to shift each of the n elements n position each time we make an insertion. 
+Best-case scenario (Ω(n)): the array is already perfectly sorted, and we simply keep moving the line between “unsorted” and “sorted” as we examine each element.
+
+++ Linear sort: 
+Algorithm: iterate across the array from left to right, searching for a specified element.
+Pseudocode:
+-	Repeat, starting at the first element
+•	If the first element is what you are looking for (the target), stop.
+•	Otherwise, move to the next element. 
+
+Worst-case scenario (O(n)): we have to look through the entire array of n elements, either because the target element is the last element of the array or doesn’t exist in the array at all. 
+Best-case scenario (Ω(1)): the target element is the first element of the array, so we can stop looking immediately after we start.
+
+++ Binary search: 
+Algorithm: divide and conquer, reducing the search area by haft each time, trying to find target number. In order to leverage this power, however, our array must first be sorted, else we can’t make assumptions about the array’s contents.
+
+Pseudocode:
+-	Repeat until the (sub) array is of size 0:
+•	Calculate the middle point of the current (sub) array
+•	If the target is at the middle, stop
+•	Otherwise, if the target < the one at middle, repeat, changing the end point to be just in the left of the middle.
+•	Otherwise, if the target > the one at middle, repeat, changing the end point to be just in the right of the middle.
+
+Worst-case scenario (O(log(n)): have to divide a list of n elements in haft repeatedly to find the target element, either because the target element will be found at the end of the last division or doesn’t exist in the array at all.
+
+Best-case scenario (Ω(1)): the target is at the midpoint -> stop immediately after we start.
+
+++ Algorithm summary:
+a.	Selection sort: find the smallest unsorted element in the array and swap it with the first unsorted of that element of that array.
+b.	Bubble sort: swap adjacent pairs of elements if they are out of order, effectively “bubbling” larger elements to the right and the smaller ones to the left.
+c.	Insertion sort: process once through the array from left to right, shifting elements as necessary to insert each element into its correct place.
+d.	Merge sort: split the full array into subarray, then merge those subarrays back together in the correct order.
+e.	Linear seach: iterate across the array from left to right, trying to find the target element.
+f.	Binary search: given a sorted array, divide and conquer by systematically eliminating haft of the remaining elements in the search for targeted element. 
+
+
+++ Recursion:
+
+++ Merge sort:
+
+++ GDB (the GNU DeBugger): If you work in the command line
+-	Type gdb <program name>
+-	b [function name, line number] (to pause at certain line and wait for further input)
+-	 r [command – line arguments]
+
+n: step forward one block of code
+s: step forward one line of code
+p[var]: prints out the value of the variable given
+info locals: prints out the value of all local variables
+bt: shows you what series of function calls have led you to the current point in the program. (backtrace).
+q: quit
 
 
 @@@ Week 3:
