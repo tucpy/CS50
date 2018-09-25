@@ -267,9 +267,31 @@ e.	Linear seach: iterate across the array from left to right, trying to find the
 f.	Binary search: given a sorted array, divide and conquer by systematically eliminating haft of the remaining elements in the search for targeted element. 
 
 
-++ Recursion:
+++ Recursion: a function that calls itself as part of the execution. So it make the code look elegant and short.
+Factorial func (n!)
+Fact(n) = n * fact(n-1)
+Recursive definition: you need a base case to stop the recursion, otherwise it will run forever. Then recursive case.
+// Example is single base case 
+int fact (int n)
+{
+	// base case (fact(1)
+	// recursive case (n * fact(n-1))
+}
+
+// Example is multiple base cases: Fibonacci number
+// Example of multiple recursive cases: Collatz conjecture 
+
+
 
 ++ Merge sort:
+Pseudocode:
+-	Sort the left haft of the array (assuming n>1)
+-	Sort the right haft of the array (assuming n>1)
+-	Merge the two halves together.
+Worst-case scenario (O(n log n)): we have to split n elements up and then recombine them, effectively doubling the sorted subarrays as we build them up. (combing sorted 1-element arrays into 2-element arrays, combining sorted 2-element arrays into 4-element arrays…)
+
+Best-case scenario (Ω(n log n)): the array is already perfectly sorted. But we still have to split and recombine it back together with this algorithm. 
+
 
 ++ GDB (the GNU DeBugger): If you work in the command line
 -	Type gdb <program name>
