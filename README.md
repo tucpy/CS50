@@ -308,6 +308,46 @@ q: quit
 
 @@@ Week 3:
 
+++++++++++++++++++++++++
+++++ Note from Shorts:
+++++++++++++++++++++++++
+
+++ Call stacks:
+
+++ Pointers: 
+
+++ Dynamic Memory Allocation:
+
+++ Hexadecimal:
+
 @@@ Week 4:
+
+++++++++++++++++++++++++
+++++ Note from Shorts:
+++++++++++++++++++++++++
+
+++ Structures: provide a way to unify several variables of different types into a single, new variabl type which can be assigned its own type name.
+
+We use structures (structs) to group together elements of a variety of data types that has a logical connection.
+Think of a structure like a "super-variable", a variable that contains other variables inside it.
+struct car
+{
+    int year;
+    char model[10];
+    char plate[7];
+    int odometer;
+    double engine_size;
+}; //<- dont forget the ; at the end
+
+struct <name of struct>
+{
+    members of the structure
+}
+
+
+
+
+
+
 
 @@@ Week 5:
